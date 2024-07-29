@@ -1,6 +1,3 @@
-if err != nil{
-    errorMessage := err.Error()
-    var status string
     switch {
 	case strings.Contains(errorMessage, "STATUS_NOT_IMPLEMENTED"):
         status = "Geçersiz işlem: STATUS_NOT_IMPLEMENTED error 0xC0000002, ERRbadfunc 0x0001 : Invalid Function."
@@ -276,7 +273,3 @@ if err != nil{
     default:
         status = "Bilinmeyen hata"
     }
-    Log445("aa hata %v", errorMessage)
-    return status, hostname, fmt.Errorf(errorMessage)
-}
-defer s.Logoff()
